@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Radio.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">radio</a> &gt; <a href="index.source.html" class="el_package">ru.netology.domaine</a> &gt; <span class="el_source">Radio.java</span></div><h1>Radio.java</h1><pre class="source lang-java linenums">package ru.netology.domaine;
+
+<span class="fc" id="L3">public class Radio {</span>
+    private int maxVolume;
+    private int minVolume;
+    private int currentVolume;
+    private int maxStation;
+    private int minStation;
+    private int currentStation;
+    // ГРОМКОСТЬ
+// Максимальная громкость
+    public int getMaxVolume() {
+<span class="nc" id="L13">        return maxVolume;</span>
+    }
+    public void setMaxVolume(int maxVolume) {
+<span class="fc" id="L16">        this.maxVolume = 10;</span>
+<span class="fc" id="L17">    }</span>
+    // Минимальная  громкость
+    public int getMinVolume() {
+<span class="nc" id="L20">        return minVolume;</span>
+    }
+    public void setMinVolume(int minVolume) {
+<span class="fc" id="L23">        this.minVolume = 0;</span>
+<span class="fc" id="L24">    }</span>
+    // Текущая громкость
+    public int getCurrentVolume() {
+<span class="fc" id="L27">        return currentVolume;</span>
+    }
+    public void setCurrentVolume(int currentVolume) {
+<span class="fc" id="L30">        this.currentVolume = currentVolume;}</span>
+    //Увеличение громкости +
+    public void upVolume() {
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if (currentVolume == maxVolume) {</span>
+<span class="fc" id="L34">            return;</span>
+        }
+<span class="fc" id="L36">        this.currentVolume++;</span>
+<span class="fc" id="L37">    }</span>
+    //Уменьшение громкости -
+    public void downVolume() {
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        if (currentVolume == minVolume) {</span>
+<span class="fc" id="L41">            return;</span>
+        }
+<span class="fc" id="L43">        this.currentVolume--;</span>
+<span class="fc" id="L44">    }</span>
+    // СТАНЦИИ
+    // Максимальная станция
+    public int getMaxStation() {
+<span class="nc" id="L48">        return maxStation;</span>
+    }
+    public void setMaxStation(int maxStation) {
+<span class="fc" id="L51">        this.maxStation = 9;</span>
+<span class="fc" id="L52">    }</span>
+    // Минимальная  станция
+    public int getMinStation() {
+<span class="nc" id="L55">        return minStation;</span>
+    }
+    public void setMinStation(int minStation) {
+<span class="fc" id="L58">        this.minStation = 0;</span>
+<span class="fc" id="L59">    }</span>
+    // Текущая станция
+    public int getCurrentStation() {
+<span class="fc" id="L62">        return currentStation;</span>
+    }
+    //Увеличение станции
+    public void upStation() {
+<span class="fc bfc" id="L66" title="All 2 branches covered.">        if (currentStation &lt; maxStation) {</span>
+<span class="fc" id="L67">            this.currentStation ++;</span>
+<span class="fc" id="L68">            return;</span>
+        }
+<span class="fc" id="L70">        this.currentStation = minStation;</span>
+<span class="fc" id="L71">    }</span>
+    //Уменьшение станции
+    public void downStation() {
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        if (currentStation &gt; minStation) {</span>
+<span class="fc" id="L75">            this.currentStation --;</span>
+<span class="fc" id="L76">            return;</span>
+        }
+<span class="fc" id="L78">        this.currentStation = maxStation;</span>
+<span class="fc" id="L79">    }</span>
+    //Установка текущей станции
+    public void setCurrentStation(int currentStation) {
+<span class="fc bfc" id="L82" title="All 2 branches covered.">        if (currentStation &gt; maxStation) {</span>
+<span class="fc" id="L83">            return;</span>
+        }
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        if (currentStation &lt; minStation) {</span>
+<span class="fc" id="L86">            return;</span>
+        }
+<span class="fc" id="L88">        this.currentStation = currentStation;</span>
+<span class="fc" id="L89">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.5.201910111838</span></div></body></html>
